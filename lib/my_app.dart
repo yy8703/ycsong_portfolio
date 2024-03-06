@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_my_portfolio/bloc/global/route/app_init_route_cubit.dart';
+import 'package:flutter_my_portfolio/ui/pages/init/splash_page.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
@@ -32,9 +34,13 @@ class _MyAppState extends State<MyApp> {
         providers: [
           BlocProvider<AppInitRouteCubit>.value(value: appInitRouteCubit),
         ],
-        child: MaterialApp(
-          debugShowCheckedModeBanner: false,
-          navigatorKey: initNavigatorKey,
+        child: ScreenUtilInit(
+          designSize: const Size(480, 720),
+          builder: (context, child) => MaterialApp(
+            initialRoute: SplashPage.routePath,
+            debugShowCheckedModeBanner: false,
+            navigatorKey: initNavigatorKey,
+          ),
         ),
       ),
     );
