@@ -1,8 +1,14 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_my_portfolio/my_app.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-void main() {
-  runApp(MyApp());
+void main() async {
+  await EasyLocalization.ensureInitialized();
+
+  await ScreenUtil.ensureScreenSize();
+
+  runApp(const MyApp());
 }
 
 class RestartWidget extends StatefulWidget {
