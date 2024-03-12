@@ -1,4 +1,9 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_my_portfolio/bloc/global/init/app_init_cubit.dart';
+import 'package:flutter_my_portfolio/bloc/global/init/app_init_state.dart';
+import 'package:flutter_my_portfolio/data/types.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SplashPage extends StatefulWidget {
@@ -43,10 +48,7 @@ class _SplashPageState extends State<SplashPage> with SingleTickerProviderStateM
         nameAnimationController.forward().then(
               (value) => Future.delayed(
                 const Duration(milliseconds: 1000),
-                () {
-                  //여기에 화면이동
-                  titleAnimationController.forward().then((value) => null);
-                },
+                () => context.read<AppInitCubit>().appInitializerProcess(step: AppInitializerStep.STEP_1),
               ),
             );
       });
@@ -60,19 +62,36 @@ class _SplashPageState extends State<SplashPage> with SingleTickerProviderStateM
       child: SizedBox(
         width: double.infinity,
         height: double.infinity,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              'YC SONG',
-              style: TextStyle(fontSize: 20.w),
-            ),
-            Text(
-              'My Portfolio',
-              style: TextStyle(fontSize: 20.w),
-            )
-          ],
+        child: BlocConsumer<AppInitCubit, AppInitState>(
+          listener: (context, state) {
+            switch (state.processState) {
+              case AppInitializerProcessState.notLocationPermission:
+                context.read<AppInitCubit>().requestLocationPermission();
+                break;
+              case AppInitializerProcessState.setLocale:
+                Locale? locale = context.read<AppInitCubit>().locale;
+                if (locale != null) {
+                  context.setLocale(locale);
+                }
+                break;
+              default:
+                break;
+            }
+          },
+          builder: (context, state) => Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                'YC SONG',
+                style: TextStyle(fontSize: 20.w),
+              ),
+              Text(
+                'My Portfolio',
+                style: TextStyle(fontSize: 20.w),
+              )
+            ],
+          ),
         ),
       ),
     );

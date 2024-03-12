@@ -1,7 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_my_portfolio/bloc/global/route/app_init_route_cubit.dart';
+import 'package:flutter_my_portfolio/bloc/global/init/app_init_cubit.dart';
+import 'package:flutter_my_portfolio/bloc/global/route/app_route_cubit.dart';
 import 'package:flutter_my_portfolio/repository/app_init_repository.dart';
 import 'package:flutter_my_portfolio/ui/pages/init/splash_page.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -20,7 +21,8 @@ class _MyAppState extends State<MyApp> {
   late AppInitRepository appInitRepository;
 
   //cubit
-  late AppInitRouteCubit appInitRouteCubit;
+  late AppRouteCubit appRouteCubit;
+  late AppInitCubit appInitCubit;
 
   @override
   void initState() {
@@ -33,9 +35,13 @@ class _MyAppState extends State<MyApp> {
   void didChangeDependencies() {
     super.didChangeDependencies();
 
-    appInitRouteCubit = AppInitRouteCubit(
+    appRouteCubit = AppRouteCubit(
       navigatorKey: initNavigatorKey,
+    );
+
+    appInitCubit = AppInitCubit(
       appInitRepository: appInitRepository,
+      appRouteCubit: appRouteCubit,
     );
   }
 
@@ -47,7 +53,7 @@ class _MyAppState extends State<MyApp> {
       ],
       child: MultiBlocProvider(
         providers: [
-          BlocProvider<AppInitRouteCubit>.value(value: appInitRouteCubit),
+          BlocProvider<AppRouteCubit>.value(value: appRouteCubit),
         ],
         child: ScreenUtilInit(
           designSize: const Size(480, 720),

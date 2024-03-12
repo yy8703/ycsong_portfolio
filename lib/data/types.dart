@@ -4,3 +4,8 @@ enum AppInitializerStep {
   STEP_3,
   STEP_4,
 }
+
+enum AppInitializerProcessState {
+  notLocationPermission,
+  setLocale,
+}
