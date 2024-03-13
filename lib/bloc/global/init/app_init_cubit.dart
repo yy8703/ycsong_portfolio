@@ -5,21 +5,33 @@ import 'package:flutter_my_portfolio/bloc/global/init/app_init_state.dart';
 import 'package:flutter_my_portfolio/bloc/global/route/app_route_cubit.dart';
 import 'package:flutter_my_portfolio/data/types.dart';
 import 'package:flutter_my_portfolio/repository/app_init_repository.dart';
+import 'package:flutter_my_portfolio/repository/auth_repository.dart';
 
 ///앱 초기화 Cubit
 class AppInitCubit extends Cubit<AppInitState> {
   AppInitCubit({
     required this.appInitRepository,
+    required this.authRepository,
     required this.appRouteCubit,
   }) : super(const AppInitState());
 
   final AppInitRepository appInitRepository;
+  final AuthRepository authRepository;
 
   final AppRouteCubit appRouteCubit;
 
   Future<void> appInitializerProcess({required AppInitializerStep step}) async {
     switch (step) {
       case AppInitializerStep.STEP_1:
+        await locationPermissionCheck();
+        break;
+      case AppInitializerStep.STEP_2:
+        await checkLocal();
+        break;
+      case AppInitializerStep.STEP_3:
+        await authInit();
+        break;
+      case AppInitializerStep.STEP_4:
         break;
       default:
         break;
@@ -50,6 +62,12 @@ class AppInitCubit extends Cubit<AppInitState> {
     await appInitRepository.checkLocal();
 
     emit(state.copyWith(processState: AppInitializerProcessState.setLocale));
+  }
+
+  ///STEP 3 : auth관련 초기화
+  //유저 정보등.. 초기화하기
+  Future<void> authInit() async {
+    await authRepository.getUserInfoList();
   }
 
   ///위치 권한 요청 메소드

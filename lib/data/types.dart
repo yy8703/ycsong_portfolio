@@ -9,3 +9,14 @@ enum AppInitializerProcessState {
   notLocationPermission,
   setLocale,
 }
+
+enum LoginEventState {
+  ok,
+  notId,
+  wrongPassword,
+}
+
+enum ButtonType {
+  oneButton,
+  twoButton,
+}

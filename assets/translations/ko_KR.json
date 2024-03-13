@@ -1,0 +1,15 @@
+{
+  "login": {
+    "title" : "로그인",
+    "content_id" : "아이디",
+    "content_password" : "비밀번호",
+    "content_id_hint_text" : "아이디를 입력해주세요",
+    "content_password_hint_text" : "비밀번호를 입력해주세요",
+    "modal_not_id" : "아이디 없음",
+    "modal_worong_password" : "틀린 비밀번호"
+  },
+  "modal": {
+    "ok":"확인",
+    "cancel":"취소"
+  }
+}

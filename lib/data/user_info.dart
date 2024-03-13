@@ -25,6 +25,20 @@ class UserInfo extends Equatable {
   ///찾기-대답
   final String findAnswer;
 
+  static UserInfo fromJson(Map<String, dynamic> json) {
+    return UserInfo(
+      id: json['id'],
+      password: json['password'],
+      createdAt: json['createdAt'],
+      findQuestion: json['findQuestion'],
+      findAnswer: json['findAnswer'],
+    );
+  }
+
+  static List<UserInfo> fromJsonList({required List<dynamic> jsonList}) {
+    return jsonList.map((json) => UserInfo.fromJson(json as Map<String, dynamic>)).toList();
+  }
+
   @override
   List<Object?> get props => [
         id,

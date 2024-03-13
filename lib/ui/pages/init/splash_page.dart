@@ -63,16 +63,18 @@ class _SplashPageState extends State<SplashPage> with SingleTickerProviderStateM
         width: double.infinity,
         height: double.infinity,
         child: BlocConsumer<AppInitCubit, AppInitState>(
-          listener: (context, state) {
+          listener: (context, state) async {
             switch (state.processState) {
               case AppInitializerProcessState.notLocationPermission:
-                context.read<AppInitCubit>().requestLocationPermission();
+                await context.read<AppInitCubit>().requestLocationPermission();
+                context.read<AppInitCubit>().appInitializerProcess(step: AppInitializerStep.STEP_2);
                 break;
               case AppInitializerProcessState.setLocale:
                 Locale? locale = context.read<AppInitCubit>().locale;
                 if (locale != null) {
                   context.setLocale(locale);
                 }
+                context.read<AppInitCubit>().appInitializerProcess(step: AppInitializerStep.STEP_3);
                 break;
               default:
                 break;
@@ -84,11 +86,11 @@ class _SplashPageState extends State<SplashPage> with SingleTickerProviderStateM
             children: [
               Text(
                 'YC SONG',
-                style: TextStyle(fontSize: 20.w),
+                style: TextStyle(fontSize: 20.sp),
               ),
               Text(
                 'My Portfolio',
-                style: TextStyle(fontSize: 20.w),
+                style: TextStyle(fontSize: 20.sp),
               )
             ],
           ),

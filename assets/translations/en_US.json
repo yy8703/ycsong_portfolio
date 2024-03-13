@@ -1,0 +1,15 @@
+{
+  "login": {
+    "title" : "login",
+    "content_id" : "id",
+    "content_password" : "password",
+    "content_id_hint_text" : "input id",
+    "content_password_hint_text" : "input password",
+    "modal_not_id" : "not id",
+    "modal_worong_password" : "worong password"
+  },
+  "modal": {
+    "ok":"ok",
+    "cancel":"cancel"
+  }
+}
