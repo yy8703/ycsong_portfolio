@@ -58,6 +58,7 @@ class _MyAppState extends State<MyApp> {
       ],
       child: MultiBlocProvider(
         providers: [
+          BlocProvider<AppInitCubit>.value(value: appInitCubit),
           BlocProvider<AppRouteCubit>.value(value: appRouteCubit),
         ],
         child: ScreenUtilInit(
@@ -69,6 +70,7 @@ class _MyAppState extends State<MyApp> {
             locale: context.locale,
             localizationsDelegates: context.localizationDelegates,
             supportedLocales: context.supportedLocales,
+            onGenerateRoute: (RouteSettings settings) => context.read<AppInitCubit>().generateRoute(settings),
           ),
         ),
       ),

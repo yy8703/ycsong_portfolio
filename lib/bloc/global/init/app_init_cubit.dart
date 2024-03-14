@@ -1,11 +1,11 @@
-import 'dart:ui';
-
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_my_portfolio/bloc/global/init/app_init_state.dart';
 import 'package:flutter_my_portfolio/bloc/global/route/app_route_cubit.dart';
 import 'package:flutter_my_portfolio/data/types.dart';
 import 'package:flutter_my_portfolio/repository/app_init_repository.dart';
 import 'package:flutter_my_portfolio/repository/auth_repository.dart';
+import 'package:flutter_my_portfolio/ui/pages/init/splash_page.dart';
 
 ///앱 초기화 Cubit
 class AppInitCubit extends Cubit<AppInitState> {
@@ -14,6 +14,14 @@ class AppInitCubit extends Cubit<AppInitState> {
     required this.authRepository,
     required this.appRouteCubit,
   }) : super(const AppInitState());
+
+  static final Map<String, RouteFactory> routes = {
+    SplashPage.routePath: SplashPage.generateRoute,
+  };
+
+  Route? generateRoute(RouteSettings settings) {
+    return routes[settings.name]?.call(settings);
+  }
 
   final AppInitRepository appInitRepository;
   final AuthRepository authRepository;
@@ -68,6 +76,11 @@ class AppInitCubit extends Cubit<AppInitState> {
   //유저 정보등.. 초기화하기
   Future<void> authInit() async {
     await authRepository.getUserInfoList();
+  }
+
+  ///STEP 4 : 로그인 페이지로
+  Future<void> moveToAuthNavigator() async {
+    appRouteCubit.moveToAuthNavigator();
   }
 
   ///위치 권한 요청 메소드

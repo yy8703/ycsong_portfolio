@@ -76,7 +76,7 @@ class _LoginPageState extends State<LoginPage> {
                     break;
                 }
               },
-              child: const Text('Login'),
+              child: Text(LocaleKeys.login_title.tr()),
             ),
           ],
         ),
