@@ -40,11 +40,12 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
       vsync: this,
     );
 
-    nameAnimation = Tween<double>(begin: 1.0, end: 0).animate(nameAnimationController);
-    titleAnimation = Tween<double>(begin: 1.0, end: 0).animate(titleAnimationController);
+    nameAnimation = Tween<double>(begin: 0, end: 1).animate(nameAnimationController);
+    titleAnimation = Tween<double>(begin: 0, end: 1).animate(titleAnimationController);
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
       Future.delayed(const Duration(milliseconds: 1000), () {
+        titleAnimationController.forward();
         nameAnimationController.forward().then(
               (value) => Future.delayed(
                 const Duration(milliseconds: 1000),
@@ -84,14 +85,20 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text(
-                'YC SONG',
-                style: TextStyle(fontSize: 20.sp),
+              FadeTransition(
+                opacity: nameAnimation,
+                child: Text(
+                  'YC SONG',
+                  style: TextStyle(fontSize: 20.sp),
+                ),
               ),
-              Text(
-                'My Portfolio',
-                style: TextStyle(fontSize: 20.sp),
-              )
+              FadeTransition(
+                opacity: titleAnimation,
+                child: Text(
+                  'My Portfolio',
+                  style: TextStyle(fontSize: 20.sp),
+                ),
+              ),
             ],
           ),
         ),

@@ -9,7 +9,7 @@ import 'package:flutter_my_portfolio/ui/components/modal/instant_modal.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginPage extends StatefulWidget {
-  static const String routePath = 'auth/login_page';
+  static const String routePath = '/auth/login_page';
 
   const LoginPage({super.key});
 
@@ -41,11 +41,14 @@ class _LoginPageState extends State<LoginPage> {
         width: double.infinity,
         height: double.infinity,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
               LocaleKeys.login_title.tr(),
               style: TextStyle(fontSize: 20.sp),
             ),
+            SizedBox(height: 20.w),
             customTextForm(
               controller: idController,
               name: LocaleKeys.login_content_id.tr(),
@@ -53,6 +56,7 @@ class _LoginPageState extends State<LoginPage> {
               maxLength: 20,
               keyboardType: TextInputType.text,
             ),
+            SizedBox(height: 10.w),
             customTextForm(
               controller: passwordController,
               name: LocaleKeys.login_content_password.tr(),
@@ -61,7 +65,8 @@ class _LoginPageState extends State<LoginPage> {
               keyboardType: TextInputType.visiblePassword,
               obscureText: true,
             ),
-            TextButton(
+            SizedBox(height: 20.w),
+            ElevatedButton(
               onPressed: () async {
                 LoginEventState state = await context.read<AuthCubit>().login(id: idController.text, password: passwordController.text);
 
@@ -77,6 +82,21 @@ class _LoginPageState extends State<LoginPage> {
                 }
               },
               child: Text(LocaleKeys.login_title.tr()),
+            ),
+            SizedBox(height: 20.w),
+            ElevatedButton(
+              onPressed: () => context.read<AuthCubit>().moveToSignUpPage(),
+              child: Text(LocaleKeys.login_content_sign_up.tr()),
+            ),
+            SizedBox(height: 10.w),
+            ElevatedButton(
+              onPressed: () async {},
+              child: Text(LocaleKeys.login_content_find_id.tr()),
+            ),
+            SizedBox(height: 10.w),
+            ElevatedButton(
+              onPressed: () async {},
+              child: Text(LocaleKeys.login_content_find_password.tr()),
             ),
           ],
         ),

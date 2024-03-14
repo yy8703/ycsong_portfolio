@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_my_portfolio/bloc/global/init/app_init_state.dart';
 import 'package:flutter_my_portfolio/bloc/global/route/app_route_cubit.dart';
 import 'package:flutter_my_portfolio/data/types.dart';
+import 'package:flutter_my_portfolio/navigators/auth_navigator.dart';
 import 'package:flutter_my_portfolio/repository/app_init_repository.dart';
 import 'package:flutter_my_portfolio/repository/auth_repository.dart';
 import 'package:flutter_my_portfolio/ui/pages/init/splash_page.dart';
@@ -17,6 +18,7 @@ class AppInitCubit extends Cubit<AppInitState> {
 
   static final Map<String, RouteFactory> routes = {
     SplashPage.routePath: SplashPage.generateRoute,
+    AuthNavigator.routePath: AuthNavigator.generateRoute,
   };
 
   Route? generateRoute(RouteSettings settings) {
@@ -40,6 +42,7 @@ class AppInitCubit extends Cubit<AppInitState> {
         await authInit();
         break;
       case AppInitializerStep.STEP_4:
+        await moveToAuthNavigator();
         break;
       default:
         break;
@@ -76,6 +79,8 @@ class AppInitCubit extends Cubit<AppInitState> {
   //유저 정보등.. 초기화하기
   Future<void> authInit() async {
     await authRepository.getUserInfoList();
+
+    appInitializerProcess(step: AppInitializerStep.STEP_4);
   }
 
   ///STEP 4 : 로그인 페이지로

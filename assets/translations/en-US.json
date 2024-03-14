@@ -1,15 +1,52 @@
 {
+  "common": {
+    "ok" : "ok"
+  },
   "login": {
     "title" : "login",
     "content_id" : "id",
     "content_password" : "password",
     "content_id_hint_text" : "input id",
     "content_password_hint_text" : "input password",
+    "content_sign_up" : "Sign up",
+    "content_find_id" : "Find ID",
+    "content_find_password" : "Find Password",
     "modal_not_id" : "not id",
     "modal_worong_password" : "worong password"
   },
   "modal": {
     "ok":"ok",
     "cancel":"cancel"
+  },
+  "sign_up": {
+    "title": "Sign Up",
+    "terms_title": "terms",
+    "terms_content": "read to terms and accept",
+    "id_title": "Your ID",
+    "id_content": "Please enter the ID you want to use",
+    "password_title": "Your Password",
+    "password_content": "Please enter the Password you want to use",
+    "find_data_title": "Make find user Id data",
+    "find_data_content": "Your Find Id is Hint Data",
+    "complete_title": "Sign Up Complete!",
+    "complete_content": "Account information is stored in the app cache",
+    "content_terms1_title": "terms.1",
+    "content_terms1_body": "Chapter I General Rules\n\n\n\nArticle 1 (Purpose)\nThe purpose of these terms and conditions is to prescribe basic matters concerning the terms and procedures of the Internet Service (hereinafter referred to as the \n'Service') provided by {COMPANY_NAME} (hereinafter referred to as the 'Site').\n\n\nArticle 2 (Effectiveness and Change of Terms and Conditions)\n① These terms and conditions will take effect by notifying the customer of the service screen or otherwise.\n② The Site may change the contents of these Terms and Conditions, and the changed Terms and Conditions will take effect by notifying or notifying them in the same \nmanner as in paragraph 1.\n\n\nArticle 3 (Definition of Terms)\nThe terms used in these terms and conditions are defined as follows.\n① Member: It refers to an individual or organization that has entered into a service use contract with the site or has been granted a user ID (ID).\n② Applicant: It refers to an individual or organization that applies for membership.\n③ ID: It refers to a combination of letters and numbers determined by members and approved by the site for the identification of members and the use of services.\n④ Password: It refers to a combination of letters and numbers determined by the member to confirm that the member matches the ID given by the member and to protect \nthe member's own secrets.⑤ Termination: This refers to the cancellation of a service agreement by a site or a member.\n\n\n\nChapter 2 Service Use Contract\n\n\n\nArticle 4 (Conclusion of Use Contract)\n① By clicking the agree button at the bottom of the Terms and Conditions, you are considered to agree to these Terms and Conditions.\n② The use contract is established when the site approves the application for use after the consent of the service user's terms and conditions.\n\n\n\nArticle 5 (Application for Use)\n① In order for applicants to use this service, they must record and submit the user information required in the site's predetermined subscription application form.\n② All user information on the application form is considered actual data. Users who do not enter their real names or actual information are not legally protected and \nmay be subject to service restrictions.\n\n\nArticle 6 (Approval of Application for Use)\n① The site accepts the application for the use of the service with the exception of paragraphs (2) and (3).\n② The Site may reserve its acceptance until the grounds for the restriction on acceptance of the application are resolved in the following cases.\nA. When there is no room for service-related facilities\nB. If there is a technical obstacle\nC. Where other sites are deemed necessary\n③ The site may refuse to accept the applicant in the following cases.\nA. In the case of applying using the name of another individual (site)\nB. In the case of applying by falsely stating user information\nC. In the case of an application for the purpose of hindering the order of well-being or good manners of society\nD. Failure to meet the requirements for application for use of other sites\n\n\n\nArticle 7 (Change of User Information)\nIf the member information entered at the time of application for use is changed, the member shall modify it online and the member shall be responsible for all \nproblems arising from the failure to change it.\n\n\nChapter 3 Obligations of Contracting Parties\n\n\n\nArticle 8 (Duty of Site)\n① The site provides members with each service.\nA. Send newsletters about new services and domain information\nB. Automatically enter personal information when registering for additional domains\nC. Various additional services for domain registration and management\n② A site shall not divulge, disclose or distribute the personal information of members acquired in connection with the provision of services to others without the \nconsent of the members, and shall not be used for commercial purposes other than service-related affairs: Provided, That the following cases shall not apply.A. Where there is a request from a state agency pursuant to the provisions of laws such as the Framework Act on Telecommunications, etc\nB. If there is a purpose of investigation into a crime or there is a request from the Information and Communication Ethics Committee\nC. If there is a request in accordance with the procedures prescribed by other relevant laws and regulations\n③ The Site is obligated to provide continuous and reliable service as provided in these Terms and Conditions.\n\n\n\nArticle 9 (Duty of Members)\n① Members shall not engage in the following acts when using the service.\nA. Unlawful use of another member's ID\nB. Reproducing the information obtained from the service for purposes other than the use of the members without prior consent of the site, using it for change, \npublishing, broadcasting, or providing it to othersC. Infringement of other rights, such as the copyright of the site, the copyright of others, etc\nD. The act of distributing information, sentences, figures, etc. that violate public order and customs to others\nE. An act that is objectively judged to be linked to a crime\nF. Other acts that violate relevant laws and regulations\n② Members must comply with the relevant laws and regulations, the provisions of these terms and conditions, guidance on the use of the service, and precautions.\n③ Members must comply with the restrictions posted by the site on the service notice or otherwise notified.\n\n\n\nChapter 4 Provision and Use of Services\n\n\n\nArticle 10 (Member's obligation to manage member ID and password)\n① The member is responsible for all management of ID and password. The member is fully responsible for any consequences arising from the negligence of the management \nof ID and password given to the member and fraudulent use.② Members must notify the site of any fraudulent use of their ID or any other security breach.\n\n\n\nArticle 11 (Restriction and Suspension of Services)\n① The site may restrict or suspend all or part of the service in case of exhibition, accident, natural disaster, or similar national emergency, and other force \nmajeure reasons, such as the suspension of telecommunications services by a key telecommunications operator under the Telecommunications Business Act.② When a site restricts or suspends the use of services pursuant to paragraph (1), it shall notify the member of the grounds, the period of restriction, etc. without \ndelay.\n\n\nChapter 5 Change or Termination of Contract Matters\n\n\n\nArticle 12 (Change of Information)\nIf a member wants to change customer information, such as address and password, he or she can change it using the member information change service on the website.\n",
+    "content_terms1_ok": "Accept",
+    "content_terms2_title": "terms.2",
+    "content_terms2_body": "In the process of using the service, information such as device information, IP address, cookies, date and time of visit, fraudulent use records, and \nservice use records can be automatically collected.You have the right to refuse the above consent, and if you refuse the consent, the use of the service will be restricted.\n(*1) Collect IDs if you use the email service provided by the company.\n(*2) User information and behavioral information collected based on 'cookie' or 'advertisement identifier' can be used for customized content \nrecommendation and marketing purposes. For more information and rejection methods, please check the company's customized advertisement guide page.(*3) To protect the user's personal information, long-term disconnected accounts are dormant. For more information, please check [Company Operation \nPolicy > 6. Service Dormant Policy].For more information, please refer to the [Personal Information Processing Policy].\n",
+    "content_terms2_ok": "Accept",
+    "content_terms_all_ok": "All Accept",
+    "content_next": "Next",
+    "content_id": "ID",
+    "content_id_hint_text": "input use ID",
+    "content_password": "Password",
+    "content_password_hint_text": "input use Password",
+    "content_re_password": "Re Password",
+    "content_re_password_hint_text": "input re password",
+    "content_find_data": "your find question",
+    "content_find_data_hint_text": "input question",
+    "content_find_answer": "your find answer",
+    "content_find_answer_hint_text": "input answer"
   }
 }
