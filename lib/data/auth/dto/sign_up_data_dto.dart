@@ -17,6 +17,18 @@ class SignUpDataDTO extends Equatable {
   ///이용약관 2번
   final bool? isTerms2;
 
+  SignUpDataDTO copyWith({
+    UserInfo? userInfo,
+    bool? isTerms1,
+    bool? isTerms2,
+  }) {
+    return SignUpDataDTO(
+      userInfo: userInfo ?? this.userInfo,
+      isTerms1: isTerms1 ?? this.isTerms1,
+      isTerms2: isTerms2 ?? this.isTerms2,
+    );
+  }
+
   @override
   List<Object?> get props => [
         userInfo,

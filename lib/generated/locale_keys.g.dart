@@ -35,6 +35,9 @@ abstract class LocaleKeys {
   static const sign_up_content_next = 'sign_up.content_next';
   static const sign_up_content_id = 'sign_up.content_id';
   static const sign_up_content_id_hint_text = 'sign_up.content_id_hint_text';
+  static const sign_up_content_id_over_lap = 'sign_up.content_id_over_lap';
+  static const sign_up_content_id_over_lap_plz = 'sign_up.content_id_over_lap_plz';
+  static const sign_up_content_id_is_over_lap = 'sign_up.content_id_is_over_lap';
   static const sign_up_content_password = 'sign_up.content_password';
   static const sign_up_content_password_hint_text = 'sign_up.content_password_hint_text';
   static const sign_up_content_re_password = 'sign_up.content_re_password';

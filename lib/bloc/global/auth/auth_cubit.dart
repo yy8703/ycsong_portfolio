@@ -41,4 +41,13 @@ class AuthCubit extends Cubit<AuthState> {
 
     authNavigatorKey.currentState!.pushNamedAndRemoveUntil(SignUpTermsPage.routePath, (route) => false);
   }
+
+  Future<void> termsAcceptEvent({required bool value, required int index}) async {
+    if (state.signUpDataDTO != null) {
+      SignUpDataDTO newData = ((index == 1)) ? state.signUpDataDTO!.copyWith(isTerms1: value) : state.signUpDataDTO!.copyWith(isTerms2: value);
+      emit(state.copyWith(signUpDataDTO: newData));
+    } else {
+      emit(state.copyWith(signUpDataDTO: const SignUpDataDTO()));
+    }
+  }
 }
