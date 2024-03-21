@@ -6,6 +6,7 @@ import 'package:flutter_my_portfolio/data/auth/dto/sign_up_data_dto.dart';
 import 'package:flutter_my_portfolio/data/auth/user_info.dart';
 import 'package:flutter_my_portfolio/data/types.dart';
 import 'package:flutter_my_portfolio/repository/auth_repository.dart';
+import 'package:flutter_my_portfolio/ui/pages/auth/sign_up/sign_up_find_data_page.dart';
 import 'package:flutter_my_portfolio/ui/pages/auth/sign_up/sign_up_id_page.dart';
 import 'package:flutter_my_portfolio/ui/pages/auth/sign_up/sign_up_password_page.dart';
 import 'package:flutter_my_portfolio/ui/pages/auth/sign_up/sign_up_terms_page.dart';
@@ -56,6 +57,11 @@ class AuthCubit extends Cubit<AuthState> {
     authNavigatorKey.currentState!.pushNamed(SignUpPasswordPage.routePath);
   }
 
+  //아이디 >> 아이디 찾기 질문
+  Future<void> moveToMakeFindDataPage() async {
+    authNavigatorKey.currentState!.pushNamed(SignUpFindDataPage.routePath);
+  }
+
   Future<void> termsAcceptEvent({required bool value, required int index}) async {
     if (state.signUpDataDTO != null) {
       SignUpDataDTO newData = ((index == 1)) ? state.signUpDataDTO!.copyWith(isTerms1: value) : state.signUpDataDTO!.copyWith(isTerms2: value);
@@ -69,6 +75,12 @@ class AuthCubit extends Cubit<AuthState> {
     RegExpState result = RegExpFormat.idRegularExpressionCheck(id: value);
 
     emit(state.copyWith(idRegExpState: result));
+  }
+
+  Future<void> passwordOnChangedEvent({String? password, String? confirmPassword}) async {
+    RegExpState result = RegExpFormat.passwordRegularExpressionCheck(password: password, confirmPassword: confirmPassword);
+
+    emit(state.copyWith(passwordRegExpState: result));
   }
 
   Future<bool> idOverLapEvent({required String value}) async {

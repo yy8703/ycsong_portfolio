@@ -41,36 +41,34 @@ class _SignUpIdPageState extends State<SignUpIdPage> {
             Text(LocaleKeys.sign_up_id_title.tr()),
             Text(LocaleKeys.sign_up_id_content.tr()),
             SizedBox(height: 30.h),
-            BlocBuilder<AuthCubit, AuthState>(
-              builder: (context, state) => Row(
-                children: [
-                  CustomTextForm(
-                    name: LocaleKeys.sign_up_id_title.tr(),
-                    controller: idController,
-                    hintText: LocaleKeys.sign_up_content_id_hint_text.tr(),
-                    keyboardType: TextInputType.text,
-                    maxLength: 20,
-                    onChanged: (value) => context.read<AuthCubit>().idOnChangedEvent(value: value),
-                  ),
-                  const Spacer(),
-                  ElevatedButton(
-                    onPressed: () async {
-                      if (idController.text.isNotEmpty) {
-                        bool isIdOverLap = await context.read<AuthCubit>().idOverLapEvent(value: idController.text);
+            Row(
+              children: [
+                CustomTextForm(
+                  name: LocaleKeys.sign_up_id_title.tr(),
+                  controller: idController,
+                  hintText: LocaleKeys.sign_up_content_id_hint_text.tr(),
+                  keyboardType: TextInputType.text,
+                  maxLength: 20,
+                  onChanged: (value) => context.read<AuthCubit>().idOnChangedEvent(value: value),
+                ),
+                const Spacer(),
+                ElevatedButton(
+                  onPressed: () async {
+                    if (idController.text.isNotEmpty) {
+                      bool isIdOverLap = await context.read<AuthCubit>().idOverLapEvent(value: idController.text);
 
-                        if (isIdOverLap) {
-                          idOKModal();
-                        } else {
-                          isIdOverLapModal();
-                        }
+                      if (isIdOverLap) {
+                        idOKModal();
                       } else {
-                        notIdModal();
+                        isIdOverLapModal();
                       }
-                    },
-                    child: Text(LocaleKeys.sign_up_content_id_over_lap.tr()),
-                  ),
-                ],
-              ),
+                    } else {
+                      notIdModal();
+                    }
+                  },
+                  child: Text(LocaleKeys.sign_up_content_id_over_lap.tr()),
+                ),
+              ],
             ),
             SizedBox(height: 5.h),
             BlocBuilder<AuthCubit, AuthState>(
