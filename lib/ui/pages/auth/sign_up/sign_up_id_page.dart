@@ -51,7 +51,6 @@ class _SignUpIdPageState extends State<SignUpIdPage> {
                     keyboardType: TextInputType.text,
                     maxLength: 20,
                     onChanged: (value) => context.read<AuthCubit>().idOnChangedEvent(value: value),
-                    initialValue: state.idRegExpState?.value,
                   ),
                   const Spacer(),
                   ElevatedButton(
