@@ -6,6 +6,7 @@ class SignUpDataDTO extends Equatable {
     this.userInfo,
     this.isTerms1,
     this.isTerms2,
+    this.isIdOverLap,
   });
 
   ///회원가입시 유저가 입력한 정보
@@ -17,15 +18,20 @@ class SignUpDataDTO extends Equatable {
   ///이용약관 2번
   final bool? isTerms2;
 
+  ///아이디 중복 체크 여부
+  final bool? isIdOverLap;
+
   SignUpDataDTO copyWith({
     UserInfo? userInfo,
     bool? isTerms1,
     bool? isTerms2,
+    bool? isIdOverLap,
   }) {
     return SignUpDataDTO(
       userInfo: userInfo ?? this.userInfo,
       isTerms1: isTerms1 ?? this.isTerms1,
       isTerms2: isTerms2 ?? this.isTerms2,
+      isIdOverLap: isIdOverLap ?? this.isIdOverLap,
     );
   }
 
@@ -34,5 +40,6 @@ class SignUpDataDTO extends Equatable {
         userInfo,
         isTerms1,
         isTerms2,
+        isIdOverLap,
       ];
 }

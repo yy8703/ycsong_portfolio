@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_my_portfolio/bloc/global/auth/auth_cubit.dart';
 import 'package:flutter_my_portfolio/bloc/global/auth/auth_state.dart';
 import 'package:flutter_my_portfolio/generated/locale_keys.g.dart';
+import 'package:flutter_my_portfolio/ui/components/modal/instant_modal.dart';
 import 'package:flutter_my_portfolio/ui/components/sign_up/sign_up_terms_check_box_component.dart';
 import 'package:flutter_my_portfolio/ui/components/sign_up/sign_up_terms_component.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -84,14 +85,32 @@ class _SignUpTermsPageState extends State<SignUpTermsPage> {
               ),
             ),
             const Spacer(),
-            ElevatedButton(
-              onPressed: () async {},
-              child: Text(LocaleKeys.sign_up_content_next.tr()),
+            BlocBuilder<AuthCubit, AuthState>(
+              builder: (context, state) => ElevatedButton(
+                onPressed: () {
+                  if (state.signUpDataDTO?.isTerms1 == true && state.signUpDataDTO?.isTerms2 == true) {
+                    context.read<AuthCubit>().moveToMakeIdPage();
+                  } else {
+                    notTermsModal();
+                  }
+                },
+                child: Text(LocaleKeys.sign_up_content_next.tr()),
+              ),
             ),
             SizedBox(height: 20.h),
           ],
         ),
       ),
+    );
+  }
+
+  Future<void> notTermsModal() async {
+    await showInstantModal<bool>(
+      context,
+      innerWidth: 280.w,
+      innerHeight: 150.w,
+      modalText: LocaleKeys.sign_up_content_terms_not_ok.tr(),
+      mainButtonOnTap: () => Navigator.pop(context),
     );
   }
 }

@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_my_portfolio/bloc/global/auth/auth_state.dart';
+import 'package:flutter_my_portfolio/bloc/global/auth/reg_exp_state.dart';
 import 'package:flutter_my_portfolio/data/auth/dto/sign_up_data_dto.dart';
 import 'package:flutter_my_portfolio/data/auth/user_info.dart';
 import 'package:flutter_my_portfolio/data/types.dart';
 import 'package:flutter_my_portfolio/repository/auth_repository.dart';
+import 'package:flutter_my_portfolio/ui/pages/auth/sign_up/sign_up_id_page.dart';
+import 'package:flutter_my_portfolio/ui/pages/auth/sign_up/sign_up_password_page.dart';
 import 'package:flutter_my_portfolio/ui/pages/auth/sign_up/sign_up_terms_page.dart';
+import 'package:flutter_my_portfolio/util/reg_exp_format.dart';
 
 class AuthCubit extends Cubit<AuthState> {
   AuthCubit({
@@ -39,7 +43,17 @@ class AuthCubit extends Cubit<AuthState> {
     SignUpDataDTO newData = const SignUpDataDTO();
     emit(state.copyWith(signUpDataDTO: newData));
 
-    authNavigatorKey.currentState!.pushNamedAndRemoveUntil(SignUpTermsPage.routePath, (route) => false);
+    authNavigatorKey.currentState!.pushNamed(SignUpTermsPage.routePath);
+  }
+
+  //약관동의 > 아이디 생성
+  Future<void> moveToMakeIdPage() async {
+    authNavigatorKey.currentState!.pushNamed(SignUpIdPage.routePath);
+  }
+
+  //아이디 >> 비밀번호
+  Future<void> moveToMakePasswordPage() async {
+    authNavigatorKey.currentState!.pushNamed(SignUpPasswordPage.routePath);
   }
 
   Future<void> termsAcceptEvent({required bool value, required int index}) async {
@@ -49,5 +63,29 @@ class AuthCubit extends Cubit<AuthState> {
     } else {
       emit(state.copyWith(signUpDataDTO: const SignUpDataDTO()));
     }
+  }
+
+  Future<void> idOnChangedEvent({String? value}) async {
+    RegExpState result = RegExpFormat.idRegularExpressionCheck(id: value);
+
+    emit(state.copyWith(idRegExpState: result));
+  }
+
+  Future<bool> idOverLapEvent({required String value}) async {
+    bool result = false;
+    List<UserInfo> list = authRepository.userList ?? [];
+
+    for (UserInfo info in list) {
+      if (info.id == value) {
+        //아이디 중복됨
+        return result;
+      }
+    }
+
+    result = true;
+    SignUpDataDTO? newData = state.signUpDataDTO?.copyWith(isIdOverLap: result);
+    emit(state.copyWith(signUpDataDTO: newData));
+
+    return result;
   }
 }
