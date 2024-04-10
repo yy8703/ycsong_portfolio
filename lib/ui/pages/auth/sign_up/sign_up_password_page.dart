@@ -64,7 +64,7 @@ class _SignUpPasswordPageState extends State<SignUpPasswordPage> {
             SizedBox(height: 5.h),
             BlocBuilder<AuthCubit, AuthState>(
               builder: (context, state) => Text(
-                state.idRegExpState?.errorText ?? '',
+                state.passwordRegExpState?.errorText ?? '',
                 style: const TextStyle(color: Colors.red),
               ),
             ),
@@ -72,10 +72,10 @@ class _SignUpPasswordPageState extends State<SignUpPasswordPage> {
             BlocBuilder<AuthCubit, AuthState>(
               builder: (context, state) => ElevatedButton(
                 onPressed: () {
-                  if (state.idRegExpState != null && state.idRegExpState!.errorText.isNotEmpty) {
+                  if (state.passwordRegExpState != null && state.passwordRegExpState!.errorText.isEmpty) {
                     context.read<AuthCubit>().moveToMakeFindDataPage();
                   } else {
-                    passwordErrorModal(content: state.idRegExpState!.errorText);
+                    passwordErrorModal(content: state.passwordRegExpState!.errorText);
                   }
                 },
                 child: Text(LocaleKeys.sign_up_content_next.tr()),

@@ -16,7 +16,8 @@
   },
   "modal": {
     "ok":"ok",
-    "cancel":"cancel"
+    "cancel":"cancel",
+    "fail":"fail"
   },
   "sign_up": {
     "title": "Sign Up",
@@ -53,11 +54,11 @@
     "content_password_hint_text": "input use Password",
     "content_re_password": "Re Password",
     "content_re_password_hint_text": "input re password",
-    "sign_up_validator_password_input_error": "Please enter your password",
-    "sign_up_validator_password_length_8_error": "Password must be at least 8 characters long",
-    "sign_up_validator_password_length_16_error_max": "Password must be less than 16 characters long",
-    "sign_up_validator_password_correctly_error": "Password must contain English, numbers and special characters",
-    "sign_up_validator_password_not_match_error": "Passwords do not match",
+    "validator_password_input_error": "Please enter your password",
+    "validator_password_length_8_error": "Password must be at least 8 characters long",
+    "validator_password_length_16_error_max": "Password must be less than 16 characters long",
+    "validator_password_correctly_error": "Password must contain English, numbers and special characters",
+    "validator_password_not_match_error": "Passwords do not match",
     "content_find_data": "your find question",
     "content_find_data_hint_text": "input question",
     "content_find_answer": "your find answer",

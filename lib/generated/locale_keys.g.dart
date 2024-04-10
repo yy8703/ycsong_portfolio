@@ -14,6 +14,7 @@ abstract class LocaleKeys {
   static const login_modal_worong_password = 'login.modal_worong_password';
   static const modal_ok = 'modal.ok';
   static const modal_cancel = 'modal.cancel';
+  static const modal_fail = 'modal.fail';
   static const sign_up_title = 'sign_up.title';
   static const sign_up_terms_title = 'sign_up.terms_title';
   static const sign_up_terms_content = 'sign_up.terms_content';

@@ -41,4 +41,17 @@ class RegExpFormat {
 
     return RegExpState(errorText: errorText ?? '', isEnabled: errorText == null, value: password);
   }
+
+  /// 계정찾기 정보 정규식
+  static RegExpState findDataRegularExpressionCheck({String? answer, String? findData}) {
+    String? errorText;
+
+    if (answer == null || answer.isEmpty) {
+      errorText = LocaleKeys.sign_up_content_find_answer_hint_text.tr();
+    } else if (findData == null || findData.isEmpty) {
+      errorText = LocaleKeys.sign_up_content_find_data_hint_text.tr();
+    }
+
+    return RegExpState(errorText: errorText ?? '', isEnabled: errorText == null, value: '$answer\n$findData');
+  }
 }

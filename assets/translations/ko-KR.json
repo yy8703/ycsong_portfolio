@@ -16,7 +16,8 @@
   },
   "modal": {
     "ok":"확인",
-    "cancel":"취소"
+    "cancel":"취소",
+    "fail":"실패"
   },
   "sign_up": {
     "title": "회원가입",
@@ -53,11 +54,11 @@
     "content_password_hint_text": "사용할 비밀번호 입력",
     "content_re_password": "비밀번호 재확인",
     "content_re_password_hint_text": "비밀번호 다시 입력",
-    "sign_up_validator_password_input_error": "비밀번호를 입력해주세요",
-    "sign_up_validator_password_length_8_error": "비밀번호 길이는 8자 이상이어야 합니다.",
-    "sign_up_validator_password_length_16_error_max": "비밀번호 길이는 16자 미만이어야 합니다.",
-    "sign_up_validator_password_correct_error": "비밀번호에는 영어, 숫자 및 특수 문자가 포함되어야 합니다.",
-    "sign_up_validator_password_not_match_error": "비밀번호가 일치하지 않습니다.",
+    "validator_password_input_error": "비밀번호를 입력해주세요",
+    "validator_password_length_8_error": "비밀번호 길이는 8자 이상이어야 합니다.",
+    "validator_password_length_16_error_max": "비밀번호 길이는 16자 미만이어야 합니다.",
+    "validator_password_correctly_error": "비밀번호에는 영어, 숫자 및 특수 문자가 포함되어야 합니다.",
+    "validator_password_not_match_error": "비밀번호가 일치하지 않습니다.",
     "content_find_data": "계정 찾기 질문",
     "content_find_data_hint_text": "질문을 입력해 주세요",
     "content_find_answer": "계정 찾기 정답",

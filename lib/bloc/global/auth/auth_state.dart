@@ -7,21 +7,25 @@ class AuthState extends Equatable {
     this.signUpDataDTO,
     this.idRegExpState,
     this.passwordRegExpState,
+    this.findDataRegExpState,
   });
 
   final SignUpDataDTO? signUpDataDTO;
   final RegExpState? idRegExpState;
   final RegExpState? passwordRegExpState;
+  final RegExpState? findDataRegExpState;
 
   AuthState copyWith({
     SignUpDataDTO? signUpDataDTO,
     RegExpState? idRegExpState,
     RegExpState? passwordRegExpState,
+    RegExpState? findDataRegExpState,
   }) {
     return AuthState(
       signUpDataDTO: signUpDataDTO ?? this.signUpDataDTO,
       idRegExpState: idRegExpState ?? this.idRegExpState,
       passwordRegExpState: passwordRegExpState ?? this.passwordRegExpState,
+      findDataRegExpState: findDataRegExpState ?? this.findDataRegExpState,
     );
   }
 
@@ -30,5 +34,6 @@ class AuthState extends Equatable {
         signUpDataDTO,
         idRegExpState,
         passwordRegExpState,
+        findDataRegExpState,
       ];
 }

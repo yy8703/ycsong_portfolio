@@ -6,6 +6,8 @@ import 'package:flutter_my_portfolio/data/auth/dto/sign_up_data_dto.dart';
 import 'package:flutter_my_portfolio/data/auth/user_info.dart';
 import 'package:flutter_my_portfolio/data/types.dart';
 import 'package:flutter_my_portfolio/repository/auth_repository.dart';
+import 'package:flutter_my_portfolio/ui/pages/auth/login_page.dart';
+import 'package:flutter_my_portfolio/ui/pages/auth/sign_up/sign_up_complete_page.dart';
 import 'package:flutter_my_portfolio/ui/pages/auth/sign_up/sign_up_find_data_page.dart';
 import 'package:flutter_my_portfolio/ui/pages/auth/sign_up/sign_up_id_page.dart';
 import 'package:flutter_my_portfolio/ui/pages/auth/sign_up/sign_up_password_page.dart';
@@ -57,9 +59,19 @@ class AuthCubit extends Cubit<AuthState> {
     authNavigatorKey.currentState!.pushNamed(SignUpPasswordPage.routePath);
   }
 
-  //아이디 >> 아이디 찾기 질문
+  //비밀번호 >> 아이디 찾기 질문
   Future<void> moveToMakeFindDataPage() async {
     authNavigatorKey.currentState!.pushNamed(SignUpFindDataPage.routePath);
+  }
+
+  //아이디 찾기 질문 >> 회원가입 완료
+  Future<void> moveToSignUpCompletePage() async {
+    authNavigatorKey.currentState!.pushNamed(SignUpCompletePage.routePath);
+  }
+
+  //로그인 페이지로
+  Future<void> moveToLoginPage() async {
+    authNavigatorKey.currentState!.pushNamedAndRemoveUntil(LoginPage.routePath, (route) => false);
   }
 
   Future<void> termsAcceptEvent({required bool value, required int index}) async {
@@ -83,6 +95,12 @@ class AuthCubit extends Cubit<AuthState> {
     emit(state.copyWith(passwordRegExpState: result));
   }
 
+  Future<void> findDataOnChangedEvent({String? answer, String? findData}) async {
+    RegExpState result = RegExpFormat.findDataRegularExpressionCheck(answer: answer, findData: findData);
+
+    emit(state.copyWith(findDataRegExpState: result));
+  }
+
   Future<bool> idOverLapEvent({required String value}) async {
     bool result = false;
     List<UserInfo> list = authRepository.userList ?? [];
@@ -99,5 +117,32 @@ class AuthCubit extends Cubit<AuthState> {
     emit(state.copyWith(signUpDataDTO: newData));
 
     return result;
+  }
+
+  Future<bool> makeUserInfoAndSave() async {
+    UserInfo? userInfo;
+    try {
+      //회원가입 - 유저 정보 만들기
+      List<String> strList = state.findDataRegExpState!.value!.split('\n');
+      userInfo = UserInfo(
+        id: state.idRegExpState!.value!,
+        password: state.passwordRegExpState!.value!,
+        createdAt: DateTime.now(),
+        findQuestion: strList.first,
+        findAnswer: strList.last,
+      );
+    } catch (e) {
+      return false;
+    }
+
+    //신규 유저 정보 저장
+    List<UserInfo> list = List.of(authRepository.userList ?? []);
+    list.add(userInfo);
+    authRepository.userList = list;
+
+    //신규 유저 정보 캐시에 저장
+    await authRepository.saveUserInfoList();
+
+    return true;
   }
 }
