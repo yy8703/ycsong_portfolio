@@ -3,6 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_my_portfolio/bloc/global/auth/auth_cubit.dart';
 import 'package:flutter_my_portfolio/bloc/global/sign_up/sign_up_cubit.dart';
 import 'package:flutter_my_portfolio/repository/auth_repository.dart';
+import 'package:flutter_my_portfolio/ui/pages/auth/find_id/find_id_complete_page.dart';
+import 'package:flutter_my_portfolio/ui/pages/auth/find_id/find_id_page.dart';
+import 'package:flutter_my_portfolio/ui/pages/auth/find_password/find_password_complete_page.dart';
+import 'package:flutter_my_portfolio/ui/pages/auth/find_password/find_password_page.dart';
 import 'package:flutter_my_portfolio/ui/pages/auth/login_page.dart';
 import 'package:flutter_my_portfolio/ui/pages/auth/sign_up/sign_up_complete_page.dart';
 import 'package:flutter_my_portfolio/ui/pages/auth/sign_up/sign_up_find_data_page.dart';
@@ -33,6 +37,10 @@ class AuthNavigator extends StatefulWidget {
     SignUpIdPage.routePath: SignUpIdPage.generateRoute,
     SignUpPasswordPage.routePath: SignUpPasswordPage.generateRoute,
     SignUpTermsPage.routePath: SignUpTermsPage.generateRoute,
+    FindIdPage.routePath: FindIdPage.generateRoute,
+    FindIdCompletePage.routePath: FindIdCompletePage.generateRoute,
+    FindPasswordPage.routePath: FindPasswordPage.generateRoute,
+    FindPasswordCompletePage.routePath: FindPasswordCompletePage.generateRoute,
   };
 }
 

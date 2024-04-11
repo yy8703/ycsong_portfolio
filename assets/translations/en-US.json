@@ -63,5 +63,19 @@
     "content_find_data_hint_text": "input question",
     "content_find_answer": "your find answer",
     "content_find_answer_hint_text": "input answer"
+  },
+  "find_id": {
+    "title": "Find ID",
+    "content" : "Please complete the search question you entered when you signed up for membership",
+    "not_id": "No ID exists that matches the search question",
+    "your_id": "The ID that matches the search question is as follows."
+  },
+  "find_password": {
+    "title": "Find the password",
+    "id_content": "Enter the ID of the password you want to find",
+    "content" : "Please complete the search question you entered when you signed up for membership",
+    "not_id": "This is a non-existent ID",
+    "your_password": "The password that matches the search question is as follows,",
+    "fail" : "No ID exists that matches the search question"
   }
 }

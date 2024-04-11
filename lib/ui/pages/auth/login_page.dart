@@ -90,12 +90,12 @@ class _LoginPageState extends State<LoginPage> {
             ),
             SizedBox(height: 10.w),
             ElevatedButton(
-              onPressed: () async {},
+              onPressed: () => context.read<AuthCubit>().moveToFindIdPage(),
               child: Text(LocaleKeys.login_content_find_id.tr()),
             ),
             SizedBox(height: 10.w),
             ElevatedButton(
-              onPressed: () async {},
+              onPressed: () => context.read<AuthCubit>().moveToFindPasswordPage(),
               child: Text(LocaleKeys.login_content_find_password.tr()),
             ),
           ],
