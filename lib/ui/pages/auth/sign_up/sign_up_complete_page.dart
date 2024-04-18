@@ -32,6 +32,8 @@ class _SignUpCompletePageState extends State<SignUpCompletePage> {
         height: double.infinity,
         padding: EdgeInsets.symmetric(horizontal: 30.w),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(LocaleKeys.sign_up_complete_title.tr()),
             SizedBox(height: 20.h),

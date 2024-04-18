@@ -60,11 +60,15 @@ abstract class LocaleKeys {
   static const sign_up_content_find_answer_hint_text = 'sign_up.content_find_answer_hint_text';
   static const find_id_title = 'find_id.title';
   static const find_id_content = 'find_id.content';
+  static const find_id_content2 = 'find_id.content2';
+  static const find_id_content3 = 'find_id.content3';
   static const find_id_not_id = 'find_id.not_id';
   static const find_id_your_id = 'find_id.your_id';
   static const find_password_title = 'find_password.title';
   static const find_password_id_content = 'find_password.id_content';
   static const find_password_content = 'find_password.content';
+  static const find_password_content2 = 'find_password.content2';
+  static const find_password_content3 = 'find_password.content3';
   static const find_password_not_id = 'find_password.not_id';
   static const find_password_your_password = 'find_password.your_password';
   static const find_password_fail = 'find_password.fail';

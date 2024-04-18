@@ -28,6 +28,7 @@ class AuthRepository {
   }
 
   Future<void> saveUserInfoList() async {
-    sp.setString('usersData', json.encode(userList));
+    List<Map<String, dynamic>> data = UserInfo.toMapList(userList ?? []);
+    sp.setString('usersData', json.encode(data));
   }
 }

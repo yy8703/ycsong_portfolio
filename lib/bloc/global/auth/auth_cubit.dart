@@ -8,6 +8,8 @@ import 'package:flutter_my_portfolio/data/types.dart';
 import 'package:flutter_my_portfolio/repository/auth_repository.dart';
 import 'package:flutter_my_portfolio/ui/pages/auth/find_id/find_id_complete_page.dart';
 import 'package:flutter_my_portfolio/ui/pages/auth/find_id/find_id_page.dart';
+import 'package:flutter_my_portfolio/ui/pages/auth/find_password/find_password_complete_page.dart';
+import 'package:flutter_my_portfolio/ui/pages/auth/find_password/find_password_id_input_page.dart';
 import 'package:flutter_my_portfolio/ui/pages/auth/find_password/find_password_page.dart';
 import 'package:flutter_my_portfolio/ui/pages/auth/login_page.dart';
 import 'package:flutter_my_portfolio/ui/pages/auth/sign_up/sign_up_complete_page.dart';
@@ -87,6 +89,11 @@ class AuthCubit extends Cubit<AuthState> {
     authNavigatorKey.currentState!.pushNamed(FindIdCompletePage.routePath);
   }
 
+  //비밀번호 찾기(아이디 입력)
+  Future<void> moveToFindPasswordIdInputPage() async {
+    authNavigatorKey.currentState!.pushNamed(FindPasswordIdInputPage.routePath);
+  }
+
   //비밀번호 찾기
   Future<void> moveToFindPasswordPage() async {
     authNavigatorKey.currentState!.pushNamed(FindPasswordPage.routePath);
@@ -94,7 +101,7 @@ class AuthCubit extends Cubit<AuthState> {
 
   //비밀번호 찾기 성공
   Future<void> moveToFindPasswordCompletePage() async {
-    authNavigatorKey.currentState!.pushNamed(FindPasswordPage.routePath);
+    authNavigatorKey.currentState!.pushNamed(FindPasswordCompletePage.routePath);
   }
 
   Future<void> termsAcceptEvent({required bool value, required int index}) async {

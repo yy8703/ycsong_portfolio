@@ -6,6 +6,7 @@ import 'package:flutter_my_portfolio/repository/auth_repository.dart';
 import 'package:flutter_my_portfolio/ui/pages/auth/find_id/find_id_complete_page.dart';
 import 'package:flutter_my_portfolio/ui/pages/auth/find_id/find_id_page.dart';
 import 'package:flutter_my_portfolio/ui/pages/auth/find_password/find_password_complete_page.dart';
+import 'package:flutter_my_portfolio/ui/pages/auth/find_password/find_password_id_input_page.dart';
 import 'package:flutter_my_portfolio/ui/pages/auth/find_password/find_password_page.dart';
 import 'package:flutter_my_portfolio/ui/pages/auth/login_page.dart';
 import 'package:flutter_my_portfolio/ui/pages/auth/sign_up/sign_up_complete_page.dart';
@@ -39,6 +40,7 @@ class AuthNavigator extends StatefulWidget {
     SignUpTermsPage.routePath: SignUpTermsPage.generateRoute,
     FindIdPage.routePath: FindIdPage.generateRoute,
     FindIdCompletePage.routePath: FindIdCompletePage.generateRoute,
+    FindPasswordIdInputPage.routePath: FindPasswordIdInputPage.generateRoute,
     FindPasswordPage.routePath: FindPasswordPage.generateRoute,
     FindPasswordCompletePage.routePath: FindPasswordCompletePage.generateRoute,
   };
