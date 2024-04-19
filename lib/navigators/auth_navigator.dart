@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_my_portfolio/bloc/global/auth/auth_cubit.dart';
 import 'package:flutter_my_portfolio/bloc/global/sign_up/sign_up_cubit.dart';
+import 'package:flutter_my_portfolio/bloc/local/find/find_cubit.dart';
 import 'package:flutter_my_portfolio/repository/auth_repository.dart';
 import 'package:flutter_my_portfolio/ui/pages/auth/find_id/find_id_complete_page.dart';
 import 'package:flutter_my_portfolio/ui/pages/auth/find_id/find_id_page.dart';
@@ -55,6 +56,7 @@ class _AuthNavigatorState extends State<AuthNavigator> {
   //cubit
   late AuthCubit authCubit;
   late SignUpCubit signUpCubit;
+  late FindCubit findCubit;
 
   @override
   void initState() {
@@ -69,6 +71,7 @@ class _AuthNavigatorState extends State<AuthNavigator> {
 
     authCubit = AuthCubit(authNavigatorKey: authNavigatorKey, authRepository: authRepository);
     signUpCubit = SignUpCubit(authCubit: authCubit);
+    findCubit = FindCubit(authRepository: authRepository);
   }
 
   @override
@@ -77,6 +80,7 @@ class _AuthNavigatorState extends State<AuthNavigator> {
       providers: [
         BlocProvider<AuthCubit>.value(value: authCubit),
         BlocProvider<SignUpCubit>.value(value: signUpCubit),
+        BlocProvider<FindCubit>.value(value: findCubit),
       ],
       child: WillPopScope(
         child: Navigator(
