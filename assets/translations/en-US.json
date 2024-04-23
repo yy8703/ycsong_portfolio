@@ -81,5 +81,15 @@
     "not_id": "This is a non-existent ID",
     "your_password": "The password that matches the search question is as follows,",
     "fail" : "No ID exists that matches the search question"
+  },
+  "main_page": {
+    "main_page_title" : "main page",
+    "main_page_content": "List of implemented technologies",
+    "main_page_chart" : "chart",
+    "main_page_rest_api" : "REST API",
+    "main_page_animation": "animation",
+    "main_page_clone": "clone app (marketcurly)",
+    "main_page_canvas": "canvas",
+    "Main_page_flame": "flame engine"
   }
 }

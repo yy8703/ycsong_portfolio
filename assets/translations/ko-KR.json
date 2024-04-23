@@ -81,5 +81,15 @@
     "not_id" : "존재하지 않는 아이디 입니다",
     "your_password" : "찾기 질문과 맞는 비밀번호는 아래와 같습니다",
     "fail" : "찾기 질문과 맞는 아이디가 존재하지 않습니다"
+  },
+  "main_page": {
+    "main_page_title" : "메인 페이지",
+    "main_page_content" : "구현된 기술 목록",
+    "main_page_chart" : "차트",
+    "main_page_rest_api" : "REST API",
+    "main_page_anmation" : "애니메이션",
+    "main_page_clone" : "클론 앱(마켓컬리)",
+    "main_page_canvas" : "캔버스",
+    "main_page_flame" : "flame 엔진"
   }
 }

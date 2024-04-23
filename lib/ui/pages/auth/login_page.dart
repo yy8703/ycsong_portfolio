@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_my_portfolio/bloc/global/auth/auth_cubit.dart';
+import 'package:flutter_my_portfolio/bloc/global/route/app_route_cubit.dart';
 import 'package:flutter_my_portfolio/data/types.dart';
 import 'package:flutter_my_portfolio/generated/locale_keys.g.dart';
 import 'package:flutter_my_portfolio/ui/components/modal/instant_modal.dart';
@@ -72,6 +73,7 @@ class _LoginPageState extends State<LoginPage> {
 
                 switch (state) {
                   case LoginEventState.ok:
+                    context.read<AppRouteCubit>().moveToMainNavigator();
                     break;
                   case LoginEventState.notId:
                     notIdModal();

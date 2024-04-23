@@ -72,4 +72,12 @@ abstract class LocaleKeys {
   static const find_password_not_id = 'find_password.not_id';
   static const find_password_your_password = 'find_password.your_password';
   static const find_password_fail = 'find_password.fail';
+  static const main_page_title = 'main_page.title';
+  static const main_page_content = 'main_page.content';
+  static const main_page_chart = 'main_page.chart';
+  static const main_page_rest_api = 'main_page.rest_api';
+  static const main_page_anmation = 'main_page.anmation';
+  static const main_page_clone = 'main_page.clone';
+  static const main_page_canvas = 'main_page.canvas';
+  static const main_page_flame = 'main_page.flame';
 }
