@@ -83,13 +83,21 @@
     "fail" : "No ID exists that matches the search question"
   },
   "main_page": {
-    "main_page_title" : "main page",
-    "main_page_content": "List of implemented technologies",
-    "main_page_chart" : "chart",
-    "main_page_rest_api" : "REST API",
-    "main_page_animation": "animation",
-    "main_page_clone": "clone app (marketcurly)",
-    "main_page_canvas": "canvas",
-    "Main_page_flame": "flame engine"
+    "title" : "main page",
+    "content": "List of implemented technologies",
+    "chart" : "chart",
+    "rest_api" : "REST API",
+    "animation": "animation",
+    "clone": "clone app (marketcurly)",
+    "canvas": "canvas",
+    "flame": "flame engine"
+  },
+  "rest_api_page": {
+    "rest_api_page_title" : "Address Search",
+    "rest_api_page_hint_text" : "ex) Sineup-dong 111",
+    "rest_api_page_search" : "Search",
+    "rest_api_page_choice_address" : "Selected Addresses",
+    "rest_api_page_road_name" : "Road name",
+    "rest_api_page_address_number" : "Add num"
   }
 }

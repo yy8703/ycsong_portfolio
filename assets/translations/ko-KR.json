@@ -83,13 +83,21 @@
     "fail" : "찾기 질문과 맞는 아이디가 존재하지 않습니다"
   },
   "main_page": {
-    "main_page_title" : "메인 페이지",
-    "main_page_content" : "구현된 기술 목록",
-    "main_page_chart" : "차트",
-    "main_page_rest_api" : "REST API",
-    "main_page_anmation" : "애니메이션",
-    "main_page_clone" : "클론 앱(마켓컬리)",
-    "main_page_canvas" : "캔버스",
-    "main_page_flame" : "flame 엔진"
+    "title" : "메인 페이지",
+    "content" : "구현된 기술 목록",
+    "chart" : "차트",
+    "rest_api" : "REST API",
+    "anmation" : "애니메이션",
+    "clone" : "클론 앱(마켓컬리)",
+    "canvas" : "캔버스",
+    "flame" : "flame 엔진"
+  },
+  "rest_api_page": {
+    "rest_api_page_title" : "REST API (주소검색)",
+    "rest_api_page_hint_text" : "ex) 신읍동 111",
+    "rest_api_page_search" : "검색",
+    "rest_api_page_choice_address" : "선택된 주소",
+    "rest_api_page_road_name" : "도로명",
+    "rest_api_page_address_number" : "지번"
   }
 }

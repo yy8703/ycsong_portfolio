@@ -20,3 +20,21 @@ enum ButtonType {
   oneButton,
   twoButton,
 }
+
+///주소타입
+enum AddressType {
+  ///지명
+  REGION,
+
+  ///(도로명)
+  ROAD,
+
+  ///(지번 주소)
+  REGION_ADDR,
+
+  ///(도로명 주소)
+  ROAD_ADDR,
+
+  ///
+  UNKNOWN
+}

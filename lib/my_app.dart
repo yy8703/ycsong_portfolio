@@ -5,6 +5,7 @@ import 'package:flutter_my_portfolio/bloc/global/init/app_init_cubit.dart';
 import 'package:flutter_my_portfolio/bloc/global/route/app_route_cubit.dart';
 import 'package:flutter_my_portfolio/repository/app_init_repository.dart';
 import 'package:flutter_my_portfolio/repository/auth_repository.dart';
+import 'package:flutter_my_portfolio/repository/rest_api_repository.dart';
 import 'package:flutter_my_portfolio/ui/pages/init/splash_page.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -21,6 +22,7 @@ class _MyAppState extends State<MyApp> {
   //repository
   late AppInitRepository appInitRepository;
   late AuthRepository authRepository;
+  late RestApiRepository restApiRepository;
 
   //cubit
   late AppRouteCubit appRouteCubit;
@@ -32,6 +34,7 @@ class _MyAppState extends State<MyApp> {
 
     appInitRepository = AppInitRepository();
     authRepository = AuthRepository();
+    restApiRepository = RestApiRepository();
   }
 
   @override
@@ -55,6 +58,7 @@ class _MyAppState extends State<MyApp> {
       providers: [
         RepositoryProvider<AppInitRepository>.value(value: appInitRepository),
         RepositoryProvider<AuthRepository>.value(value: authRepository),
+        RepositoryProvider<RestApiRepository>.value(value: restApiRepository),
       ],
       child: MultiBlocProvider(
         providers: [

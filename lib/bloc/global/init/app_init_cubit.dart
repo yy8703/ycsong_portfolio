@@ -4,6 +4,7 @@ import 'package:flutter_my_portfolio/bloc/global/init/app_init_state.dart';
 import 'package:flutter_my_portfolio/bloc/global/route/app_route_cubit.dart';
 import 'package:flutter_my_portfolio/data/types.dart';
 import 'package:flutter_my_portfolio/navigators/auth_navigator.dart';
+import 'package:flutter_my_portfolio/navigators/main_navigator.dart';
 import 'package:flutter_my_portfolio/repository/app_init_repository.dart';
 import 'package:flutter_my_portfolio/repository/auth_repository.dart';
 import 'package:flutter_my_portfolio/ui/pages/init/splash_page.dart';
@@ -19,6 +20,7 @@ class AppInitCubit extends Cubit<AppInitState> {
   static final Map<String, RouteFactory> routes = {
     SplashPage.routePath: SplashPage.generateRoute,
     AuthNavigator.routePath: AuthNavigator.generateRoute,
+    MainNavigator.routePath: MainNavigator.generateRoute,
   };
 
   Route? generateRoute(RouteSettings settings) {

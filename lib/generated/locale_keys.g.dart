@@ -80,4 +80,10 @@ abstract class LocaleKeys {
   static const main_page_clone = 'main_page.clone';
   static const main_page_canvas = 'main_page.canvas';
   static const main_page_flame = 'main_page.flame';
+  static const rest_api_page_title = 'rest_api_page.title';
+  static const rest_api_page_hint_text = 'rest_api_page.hint_text';
+  static const rest_api_page_search = 'rest_api_page.search';
+  static const rest_api_page_choice_address = 'rest_api_page.choice_address';
+  static const rest_api_page_road_name = 'rest_api_page.road_name';
+  static const rest_api_page_address_number = 'rest_api_page.address_number';
 }
