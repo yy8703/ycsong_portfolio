@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_my_portfolio/bloc/global/main/main_state.dart';
+import 'package:flutter_my_portfolio/ui/pages/clone/kurly_main_page.dart';
+import 'package:flutter_my_portfolio/ui/pages/clone/kurly_secondary_splash_page.dart';
+import 'package:flutter_my_portfolio/ui/pages/clone/kurly_splash_page.dart';
 import 'package:flutter_my_portfolio/ui/pages/main/main_page.dart';
 import 'package:flutter_my_portfolio/ui/pages/rest_api/rest_api_main_page.dart';
 
@@ -17,5 +20,20 @@ class MainCubit extends Cubit<MainState> {
 
   Future<void> moveToRestAPIPage() async {
     mainNavigatorKey.currentState!.pushNamed(RestApiMainPage.routePath);
+  }
+
+  ///스플래시 1
+  Future<void> moveToKurlySplashPage() async {
+    mainNavigatorKey.currentState!.pushNamed(KurlySplashPage.routePath);
+  }
+
+  ///스플래시 2
+  Future<void> moveToKurlySecondarySplashPage() async {
+    mainNavigatorKey.currentState!.pushNamed(KurlySecondarySplashPage.routePath);
+  }
+
+  ///메인
+  Future<void> moveToKurlyMainPage() async {
+    mainNavigatorKey.currentState!.pushNamed(KurlyMainPage.routePath);
   }
 }

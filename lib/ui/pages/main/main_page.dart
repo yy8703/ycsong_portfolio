@@ -52,7 +52,7 @@ class _MainPageState extends State<MainPage> {
             ),
             SizedBox(height: 8.h),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () => context.read<MainCubit>().moveToKurlySplashPage(),
               child: Text(LocaleKeys.main_page_clone.tr()),
             ),
             SizedBox(height: 8.h),
