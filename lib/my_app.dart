@@ -62,6 +62,7 @@ class _MyAppState extends State<MyApp> {
         RepositoryProvider<AppInitRepository>.value(value: appInitRepository),
         RepositoryProvider<AuthRepository>.value(value: authRepository),
         RepositoryProvider<RestApiRepository>.value(value: restApiRepository),
+        RepositoryProvider<CloneRepository>.value(value: cloneRepository),
       ],
       child: MultiBlocProvider(
         providers: [
