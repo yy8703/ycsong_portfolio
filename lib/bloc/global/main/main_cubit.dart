@@ -24,16 +24,16 @@ class MainCubit extends Cubit<MainState> {
 
   ///스플래시 1
   Future<void> moveToKurlySplashPage() async {
-    mainNavigatorKey.currentState!.pushNamed(KurlySplashPage.routePath);
+    mainNavigatorKey.currentState!.pushNamedAndRemoveUntil(KurlySplashPage.routePath, (route) => false);
   }
 
   ///스플래시 2
   Future<void> moveToKurlySecondarySplashPage() async {
-    mainNavigatorKey.currentState!.pushNamed(KurlySecondarySplashPage.routePath);
+    mainNavigatorKey.currentState!.pushNamedAndRemoveUntil(KurlySecondarySplashPage.routePath, (route) => false);
   }
 
   ///메인
   Future<void> moveToKurlyMainPage() async {
-    mainNavigatorKey.currentState!.pushNamed(KurlyMainPage.routePath);
+    mainNavigatorKey.currentState!.pushNamedAndRemoveUntil(KurlyMainPage.routePath, (route) => false);
   }
 }
