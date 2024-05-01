@@ -7,19 +7,28 @@ class CloneCubit extends Cubit<CloneState> {
   CloneCubit({
     required this.cloneRepository,
   }) : super(
-          CloneState(tapBarDataList: const [
-            TapBarData(title: '컬리추천'),
-            TapBarData(title: '선물랭킹'),
-            TapBarData(title: '베스트'),
-            TapBarData(title: '신상품'),
-            TapBarData(title: '알뜰쇼핑'),
-            TapBarData(title: '특가/혜택'),
-          ], seletedTapBarTitle: '컬리추천'),
+          CloneState(
+            tapBarDataList: const [
+              TapBarData(title: '컬리추천'),
+              TapBarData(title: '선물랭킹'),
+              TapBarData(title: '베스트'),
+              TapBarData(title: '신상품'),
+              TapBarData(title: '알뜰쇼핑'),
+              TapBarData(title: '특가/혜택'),
+            ],
+            seletedTapBarTitle: '컬리추천',
+            popUpDataList: cloneRepository.popUpDataList,
+            popUpViewIndex: cloneRepository.popUpDataList.first.order,
+          ),
         );
 
   final CloneRepository cloneRepository;
 
   Future<void> tapBarOnTabEvent({required String title}) async {
     emit(state.copyWith(seletedTapBarTitle: title));
+  }
+
+  Future<void> popUpChangeEvent({required int index}) async {
+    emit(state.copyWith(popUpViewIndex: index));
   }
 }

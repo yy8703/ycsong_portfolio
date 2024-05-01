@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:logger/logger.dart';
 
 class CSSColor {
@@ -15,6 +16,7 @@ final Logger logger = Logger(
 );
 
 abstract class Global {
+  static final NumberFormat moneyFormat = NumberFormat('###,###,###');
   static final supportedLocales = [
     const Locale('en', 'US'),
     const Locale('ko', 'KR'),
