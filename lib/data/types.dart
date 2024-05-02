@@ -38,3 +38,12 @@ enum AddressType {
   ///
   UNKNOWN
 }
+
+enum TapTitle {
+  Main,
+  GiftRanking,
+  Best,
+  NewProduct,
+  AffordableShopping,
+  SpecialOffer_Benefit,
+}

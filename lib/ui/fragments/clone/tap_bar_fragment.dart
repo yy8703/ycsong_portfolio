@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_my_portfolio/data/clone/tab_bar_data.dart';
+import 'package:flutter_my_portfolio/data/types.dart';
 import 'package:flutter_my_portfolio/ui/components/clone/tap_bar_button.dart';
 import 'package:flutter_my_portfolio/util/global.dart';
 
@@ -8,12 +9,12 @@ class TapBarFragment extends StatelessWidget {
     super.key,
     required this.list,
     required this.onTapEvent,
-    this.seletedTapBarTitle,
+    this.tapTitle,
   });
 
   final List<TapBarData> list;
-  final ValueCallback<String> onTapEvent;
-  final String? seletedTapBarTitle;
+  final ValueCallback<int> onTapEvent;
+  final TapTitle? tapTitle;
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +27,8 @@ class TapBarFragment extends StatelessWidget {
     for (TapBarData data in list) {
       result.add(TapBarButton(
         buttonTitle: data.title,
-        isSeleted: (seletedTapBarTitle == data.title),
-        onTapEvent: (value) => onTapEvent(value),
+        isSeleted: (tapTitle == data.tapTitle),
+        onTapEvent: (value) => onTapEvent(data.order),
       ));
     }
 
