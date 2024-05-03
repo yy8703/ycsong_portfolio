@@ -7,12 +7,14 @@ class ItemData extends Equatable {
     required this.price,
     required this.discountRate,
     required this.reviewCnt,
+    required this.filterOrder,
   });
   String title;
   String itemImageLink;
   int price;
   double discountRate;
   int reviewCnt;
+  int filterOrder;
 
   @override
   List<Object> get props => [
@@ -21,5 +23,6 @@ class ItemData extends Equatable {
         price,
         discountRate,
         reviewCnt,
+        filterOrder,
       ];
 }

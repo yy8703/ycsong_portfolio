@@ -4,9 +4,11 @@ import 'package:flutter_my_portfolio/util/global.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ItemArea extends StatelessWidget {
-  const ItemArea({super.key, required this.itemData});
+  const ItemArea({super.key, required this.itemData, this.isMain = false});
 
   final ItemData itemData;
+
+  final bool isMain;
 
   @override
   Widget build(BuildContext context) {
@@ -14,8 +16,8 @@ class ItemArea extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          width: 160.w,
-          height: 180.h,
+          width: (isMain) ? 160.w : 220.w,
+          height: (isMain) ? 180.h : 240.h,
           decoration: BoxDecoration(
             image: DecorationImage(image: AssetImage(itemData.itemImageLink), fit: BoxFit.fill),
             borderRadius: BorderRadius.circular(8.r),
@@ -23,7 +25,7 @@ class ItemArea extends StatelessWidget {
         ),
         SizedBox(height: 6.h),
         Container(
-          width: 160.w,
+          width: (isMain) ? 160.w : 220.w,
           height: 30.h,
           decoration: BoxDecoration(
             border: Border.all(
@@ -50,7 +52,7 @@ class ItemArea extends StatelessWidget {
         SizedBox(height: 10.h),
         SizedBox(
           width: 160.w,
-          child: Text(itemData.title, style: TextStyle(fontSize: 14.sp), overflow: TextOverflow.ellipsis, maxLines: 2),
+          child: Text(itemData.title, style: TextStyle(fontSize: (isMain) ? 14.sp : 17.sp), overflow: TextOverflow.ellipsis, maxLines: 2),
         ),
         SizedBox(height: 5.h),
         Stack(
@@ -58,7 +60,7 @@ class ItemArea extends StatelessWidget {
           children: [
             Text(
               '${Global.moneyFormat.format(itemData.price)}원',
-              style: TextStyle(color: Colors.grey.shade400, fontSize: 13.sp),
+              style: TextStyle(color: Colors.grey.shade400, fontSize: (isMain) ? 13.sp : 16.sp),
             ),
             Container(
               width: 50.w,
@@ -72,12 +74,12 @@ class ItemArea extends StatelessWidget {
           children: [
             Text(
               '${(itemData.discountRate * 100).floor()}%',
-              style: TextStyle(color: Colors.orange.shade800, fontSize: 14.sp, fontWeight: FontWeight.bold),
+              style: TextStyle(color: Colors.orange.shade800, fontSize: (isMain) ? 14.sp : 17.sp, fontWeight: FontWeight.bold),
             ),
             SizedBox(width: 5.w),
             Text(
               '${Global.moneyFormat.format((itemData.price - (itemData.price * itemData.discountRate)))}원',
-              style: TextStyle(color: Colors.black, fontSize: 14.sp, fontWeight: FontWeight.bold),
+              style: TextStyle(color: Colors.black, fontSize: (isMain) ? 14.sp : 17.sp, fontWeight: FontWeight.bold),
             ),
           ],
         ),
@@ -86,13 +88,13 @@ class ItemArea extends StatelessWidget {
           children: [
             Icon(
               Icons.chat_outlined,
-              size: 13.sp,
+              size: (isMain) ? 13.sp : 17.sp,
               color: Colors.grey.shade400,
             ),
             SizedBox(width: 3.w),
             Text(
               '${itemData.reviewCnt}',
-              style: TextStyle(color: Colors.grey.shade400, fontSize: 13.sp),
+              style: TextStyle(color: Colors.grey.shade400, fontSize: (isMain) ? 13.sp : 17.sp),
             ),
           ],
         ),

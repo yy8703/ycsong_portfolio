@@ -7,6 +7,7 @@ import 'package:flutter_my_portfolio/bloc/global/main/main_cubit.dart';
 import 'package:flutter_my_portfolio/data/types.dart';
 import 'package:flutter_my_portfolio/ui/fragments/clone/bottom_navigation_bar_fragment.dart';
 import 'package:flutter_my_portfolio/ui/fragments/clone/tap_bar_fragment.dart';
+import 'package:flutter_my_portfolio/ui/fragments/clone/tap_gift_ranking_content_fragment.dart';
 import 'package:flutter_my_portfolio/ui/fragments/clone/tap_main_content_fragment.dart';
 import 'package:flutter_my_portfolio/util/global.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -57,6 +58,9 @@ class _KurlyMainPageState extends State<KurlyMainPage> {
                     );
                     break;
                   case TapTitle.GiftRanking:
+                    result = TapGiftRankingContentFragment(
+                      itemDataList: state.itemDataList,
+                    );
                     break;
                   case TapTitle.Best:
                     break;
