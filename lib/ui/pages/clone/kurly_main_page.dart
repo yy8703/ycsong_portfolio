@@ -10,6 +10,7 @@ import 'package:flutter_my_portfolio/ui/fragments/clone/tap_bar_fragment.dart';
 import 'package:flutter_my_portfolio/ui/fragments/clone/tap_bast_content_fragment.dart';
 import 'package:flutter_my_portfolio/ui/fragments/clone/tap_gift_ranking_content_fragment.dart';
 import 'package:flutter_my_portfolio/ui/fragments/clone/tap_main_content_fragment.dart';
+import 'package:flutter_my_portfolio/ui/fragments/clone/tap_new_product_content_fragment.dart';
 import 'package:flutter_my_portfolio/util/global.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -71,6 +72,11 @@ class _KurlyMainPageState extends State<KurlyMainPage> {
                     );
                     break;
                   case TapTitle.NewProduct:
+                    result = TapNewProductContentFragment(
+                      selectedButtonNumber: state.alignOrder,
+                      itemDataList: state.alignItemList(),
+                      alignEvent: (value) => context.read<CloneCubit>().alignEvent(value: value),
+                    );
                     break;
                   case TapTitle.AffordableShopping:
                     break;

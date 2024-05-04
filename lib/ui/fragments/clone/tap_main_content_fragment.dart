@@ -113,7 +113,10 @@ class TapMainContentFragment extends StatelessWidget {
                   height: 310.h,
                   child: ListView.separated(
                     itemCount: itemDataList.length,
-                    itemBuilder: (context, index) => ItemArea(itemData: itemDataList[index]),
+                    itemBuilder: (context, index) => ItemArea(
+                      itemData: itemDataList[index],
+                      isMain: true,
+                    ),
                     scrollDirection: Axis.horizontal,
                     separatorBuilder: (context, index) => SizedBox(width: 10.w),
                   ),

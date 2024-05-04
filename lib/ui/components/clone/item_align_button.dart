@@ -34,7 +34,7 @@ class ItemAlignButton extends StatelessWidget {
         Text(
           title,
           style: TextStyle(
-            fontSize: 20.sp,
+            fontSize: 15.sp,
             color: (isSelected) ? CSSColor.kurlyMainColor : Colors.black,
             fontWeight: (isSelected) ? FontWeight.bold : null,
           ),
