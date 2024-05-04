@@ -12,6 +12,7 @@ import 'package:flutter_my_portfolio/ui/fragments/clone/tap_bast_content_fragmen
 import 'package:flutter_my_portfolio/ui/fragments/clone/tap_gift_ranking_content_fragment.dart';
 import 'package:flutter_my_portfolio/ui/fragments/clone/tap_main_content_fragment.dart';
 import 'package:flutter_my_portfolio/ui/fragments/clone/tap_new_product_content_fragment.dart';
+import 'package:flutter_my_portfolio/ui/fragments/clone/tap_special_offer_benefit_content_fragment.dart';
 import 'package:flutter_my_portfolio/util/global.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -80,11 +81,10 @@ class _KurlyMainPageState extends State<KurlyMainPage> {
                     );
                     break;
                   case TapTitle.AffordableShopping:
-                    result = TapAffordableShoppingContentFragment(
-                      itemDataList: state.itemDataList,
-                    );
+                    result = TapAffordableShoppingContentFragment(itemDataList: state.itemDataList);
                     break;
                   case TapTitle.SpecialOffer_Benefit:
+                    result = TapSpecialOfferBenefitContentFragment(popUpDataList: state.popUpDataList);
                     break;
                 }
 
