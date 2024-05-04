@@ -7,6 +7,7 @@ import 'package:flutter_my_portfolio/bloc/global/main/main_cubit.dart';
 import 'package:flutter_my_portfolio/data/types.dart';
 import 'package:flutter_my_portfolio/ui/fragments/clone/bottom_navigation_bar_fragment.dart';
 import 'package:flutter_my_portfolio/ui/fragments/clone/tap_bar_fragment.dart';
+import 'package:flutter_my_portfolio/ui/fragments/clone/tap_bast_content_fragment.dart';
 import 'package:flutter_my_portfolio/ui/fragments/clone/tap_gift_ranking_content_fragment.dart';
 import 'package:flutter_my_portfolio/ui/fragments/clone/tap_main_content_fragment.dart';
 import 'package:flutter_my_portfolio/util/global.dart';
@@ -63,6 +64,11 @@ class _KurlyMainPageState extends State<KurlyMainPage> {
                     );
                     break;
                   case TapTitle.Best:
+                    result = TapBastContentFragment(
+                      selectedButtonNumber: state.alignOrder,
+                      itemDataList: state.alignItemList(),
+                      alignEvent: (value) => context.read<CloneCubit>().alignEvent(value: value),
+                    );
                     break;
                   case TapTitle.NewProduct:
                     break;

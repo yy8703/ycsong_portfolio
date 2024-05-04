@@ -13,16 +13,18 @@ class ItemGridViewFragment extends StatelessWidget {
     return Container(
       height: (208 * itemDataList.length).h,
       alignment: Alignment.center,
-      child: GridView.builder(
-        primary: false,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          childAspectRatio: 0.33.h,
-          crossAxisCount: 2,
-          crossAxisSpacing: 10.w,
+      child: IgnorePointer(
+        child: GridView.builder(
+          primary: false,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            childAspectRatio: 0.33.h,
+            crossAxisCount: 2,
+            crossAxisSpacing: 10.w,
+          ),
+          scrollDirection: Axis.vertical,
+          itemCount: itemDataList.length,
+          itemBuilder: (context, index) => ItemArea(itemData: itemDataList[index]),
         ),
-        scrollDirection: Axis.vertical,
-        itemCount: itemDataList.length,
-        itemBuilder: (context, index) => ItemArea(itemData: itemDataList[index]),
       ),
     );
   }

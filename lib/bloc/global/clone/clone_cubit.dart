@@ -21,6 +21,7 @@ class CloneCubit extends Cubit<CloneState> {
             popUpDataList: cloneRepository.popUpDataList,
             popUpViewIndex: cloneRepository.popUpDataList.first.order,
             itemDataList: cloneRepository.itemDataList,
+            alignOrder: 1,
           ),
         );
 
@@ -50,10 +51,14 @@ class CloneCubit extends Cubit<CloneState> {
         break;
     }
 
-    emit(state.copyWith(tapTitle: result));
+    emit(state.copyWith(tapTitle: result, alignOrder: 1));
   }
 
   Future<void> popUpChangeEvent({required int index}) async {
     emit(state.copyWith(popUpViewIndex: index));
+  }
+
+  Future<void> alignEvent({required int value}) async {
+    emit(state.copyWith(alignOrder: value));
   }
 }

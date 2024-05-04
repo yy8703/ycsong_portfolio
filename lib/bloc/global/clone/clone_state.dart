@@ -11,6 +11,7 @@ class CloneState extends Equatable {
     required this.popUpDataList,
     required this.popUpViewIndex,
     required this.itemDataList,
+    required this.alignOrder,
   });
 
   final TapTitle tapTitle;
@@ -26,12 +27,16 @@ class CloneState extends Equatable {
   //상품 목록
   final List<ItemData> itemDataList;
 
+  //정렬 오더
+  final int alignOrder;
+
   CloneState copyWith({
     TapTitle? tapTitle,
     List<TapBarData>? tapBarDataList,
     List<PopUpData>? popUpDataList,
     int? popUpViewIndex,
     List<ItemData>? itemDataList,
+    int? alignOrder,
   }) {
     return CloneState(
       tapTitle: tapTitle ?? this.tapTitle,
@@ -39,7 +44,20 @@ class CloneState extends Equatable {
       popUpDataList: popUpDataList ?? this.popUpDataList,
       popUpViewIndex: popUpViewIndex ?? this.popUpViewIndex,
       itemDataList: itemDataList ?? this.itemDataList,
+      alignOrder: alignOrder ?? this.alignOrder,
     );
+  }
+
+  List<ItemData> alignItemList() {
+    List<ItemData> result = [];
+
+    for (ItemData data in itemDataList) {
+      if (alignOrder == data.filterOrder) {
+        result.add(data);
+      }
+    }
+
+    return result;
   }
 
   @override
@@ -49,5 +67,6 @@ class CloneState extends Equatable {
         popUpDataList,
         popUpViewIndex,
         itemDataList,
+        alignOrder,
       ];
 }
