@@ -21,6 +21,8 @@ dependencies:
   expandable: 5.0.1
   http: 1.1.0
   carousel_slider: 4.2.1
+  dotted_line: 3.2.2
+
 
   cupertino_icons: ^1.0.2
 

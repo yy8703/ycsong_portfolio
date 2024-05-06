@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_my_portfolio/bloc/global/main/main_cubit.dart';
 import 'package:flutter_my_portfolio/bloc/local/rest_api/rest_api_cubit.dart';
 import 'package:flutter_my_portfolio/bloc/local/rest_api/rest_api_state.dart';
 import 'package:flutter_my_portfolio/data/rest_api/address.dart';
@@ -56,6 +57,9 @@ class _AddRestApiMainPageState extends State<AddRestApiMainPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(LocaleKeys.rest_api_page_title.tr()),
+        actions: [
+          IconButton(onPressed: () => context.read<MainCubit>().movoToMainPage(), icon: const Icon(Icons.arrow_back_outlined)),
+        ],
       ),
       body: SizedBox(
         width: double.infinity,

@@ -42,7 +42,7 @@ class _MainPageState extends State<MainPage> {
             ),
             SizedBox(height: 8.h),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () => context.read<MainCubit>().movoToChartPage(),
               child: Text(LocaleKeys.main_page_chart.tr()),
             ),
             SizedBox(height: 8.h),
