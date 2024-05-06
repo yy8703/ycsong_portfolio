@@ -40,3 +40,5 @@ https://www.figma.com/file/Db7kiXxbujyoAqCPikWceQ/%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB
 10. flame
 11. git
 12. git flow
+
+1차 릴리즈 - 0506
