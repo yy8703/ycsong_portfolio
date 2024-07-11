@@ -45,3 +45,6 @@
 13. git flow
 
 2차 릴리즈 - 0712
+
+-- 기타 사용 이미지 출처
+<a href="https://kr.lovepik.com/graphics/png/">png images from Lovepik.com</a>
