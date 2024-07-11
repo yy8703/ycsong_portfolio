@@ -1,14 +1,13 @@
 # ycsong_portfolio
+
 # 포트폴리오
 
 --
-1. 일정
-https://docs.google.com/spreadsheets/d/1n3P9Un3q6yDqs4A0KkUIZfg7FSNHP3sSKGDhohAB-_A/edit?usp=sharing
 
-2. 피그마
-https://www.figma.com/file/Db7kiXxbujyoAqCPikWceQ/%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4?type=design&mode=design&t=oinNS1biCNS3BlWI-1
+앱 설치 링크 : https://drive.google.com/file/d/1m0TOL3yyRpQWbBHrAvRbR8jdjfs56rKa/view?usp=sharing
 
 # 인사말
+
 --
 약 3년간 Flutter front-end 및 Back-end 경력을 가지고 있는 송영춘 입니다.
 
@@ -17,7 +16,9 @@ https://www.figma.com/file/Db7kiXxbujyoAqCPikWceQ/%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB
 궁금한점이 있으시거나 문의할 사항이 있으시다면, 언제든지 PR을 올려주시면 감사하겠습니다.
 
 # 표현하고자 하는 내용
+
 --
+
 1. 코드 스타일
 2. state management
 3. component
@@ -25,20 +26,22 @@ https://www.figma.com/file/Db7kiXxbujyoAqCPikWceQ/%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB
 5. data object
 6. 기술스택
 
-
 # 기술스택
+
 --
+
 1. bloc
 2. localization
 3. shared preferences
 4. permission
 5. screenutil
 6. REST API (Daum 우편번호 서비스)
-7. 다중 navigatior
-8. 캔버스
-9. 애니메이션
-10. flame
-11. git
-12. git flow
+7. REST API (Daum 검색 서비스)
+8. 다중 navigatior
+9. 캔버스
+10. 애니메이션 (진행중)
+11. flame (진행중)
+12. git
+13. git flow
 
-1차 릴리즈 - 0506
+2차 릴리즈 - 0712
