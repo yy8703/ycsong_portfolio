@@ -5,6 +5,7 @@ import 'package:flutter_my_portfolio/bloc/global/main/main_cubit.dart';
 import 'package:flutter_my_portfolio/bloc/global/search/search_cubit.dart';
 import 'package:flutter_my_portfolio/repository/clone_repository.dart';
 import 'package:flutter_my_portfolio/repository/search_repository.dart';
+import 'package:flutter_my_portfolio/ui/pages/animation/animation_main_page.dart';
 import 'package:flutter_my_portfolio/ui/pages/chart/chart_main_page.dart';
 import 'package:flutter_my_portfolio/ui/pages/clone/kurly_main_page.dart';
 import 'package:flutter_my_portfolio/ui/pages/clone/kurly_secondary_splash_page.dart';
@@ -47,6 +48,9 @@ class MainNavigator extends StatefulWidget {
 
     //Chart
     ChartMainPage.routePath: ChartMainPage.generateRoute,
+
+    //Animation
+    AnimationMainPage.routePath: AnimationMainPage.generateRoute,
   };
 }
 

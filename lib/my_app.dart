@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_my_portfolio/bloc/global/init/app_init_cubit.dart';
 import 'package:flutter_my_portfolio/bloc/global/route/app_route_cubit.dart';
+import 'package:flutter_my_portfolio/repository/animation_repository.dart';
 import 'package:flutter_my_portfolio/repository/app_init_repository.dart';
 import 'package:flutter_my_portfolio/repository/auth_repository.dart';
 import 'package:flutter_my_portfolio/repository/clone_repository.dart';
@@ -27,6 +28,7 @@ class _MyAppState extends State<MyApp> {
   late RestApiRepository restApiRepository;
   late CloneRepository cloneRepository;
   late SearchRepository searchRepository;
+  late AnimationRepository animationRepository;
 
   //cubit
   late AppRouteCubit appRouteCubit;
@@ -41,6 +43,7 @@ class _MyAppState extends State<MyApp> {
     restApiRepository = RestApiRepository();
     cloneRepository = CloneRepository();
     searchRepository = SearchRepository();
+    animationRepository = AnimationRepository();
   }
 
   @override
@@ -67,6 +70,7 @@ class _MyAppState extends State<MyApp> {
         RepositoryProvider<RestApiRepository>.value(value: restApiRepository),
         RepositoryProvider<CloneRepository>.value(value: cloneRepository),
         RepositoryProvider<SearchRepository>.value(value: searchRepository),
+        RepositoryProvider<AnimationRepository>.value(value: animationRepository),
       ],
       child: MultiBlocProvider(
         providers: [

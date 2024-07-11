@@ -1,10 +1,10 @@
 name: flutter_my_portfolio
 description: A new Flutter project.
-publish_to: 'none'
+publish_to: "none"
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.0.5 <4.0.0'
+  sdk: ">=3.0.5 <4.0.0"
 
 dependencies:
   flutter:
@@ -23,7 +23,7 @@ dependencies:
   carousel_slider: 4.2.1
   dotted_line: 3.2.2
   flame: 1.8.0
-
+  animated_text_kit: 4.2.2
 
   cupertino_icons: ^1.0.2
 
@@ -34,9 +34,10 @@ dev_dependencies:
   flutter_lints: ^2.0.0
 
 flutter:
-
   uses-material-design: true
 
   assets:
     - assets/translations/
     - assets/images/clone/
+    - assets/images/fleam/
+    - assets/images/animation/
