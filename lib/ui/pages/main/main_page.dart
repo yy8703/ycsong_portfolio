@@ -34,11 +34,19 @@ class _MainPageState extends State<MainPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(LocaleKeys.main_page_content.tr()),
+            Text(
+              LocaleKeys.main_page_content.tr(),
+              style: TextStyle(fontSize: 30.sp, fontWeight: FontWeight.bold),
+            ),
             SizedBox(height: 20.h),
             ElevatedButton(
               onPressed: () => context.read<MainCubit>().moveToRestAPIPage(),
-              child: Text(LocaleKeys.main_page_rest_api.tr()),
+              child: Text('${LocaleKeys.main_page_rest_api.tr()} (도로명주소)'),
+            ),
+            SizedBox(height: 8.h),
+            ElevatedButton(
+              onPressed: () => context.read<MainCubit>().moveToSearchRestAPIPage(),
+              child: Text('${LocaleKeys.main_page_rest_api.tr()} (검색)'),
             ),
             SizedBox(height: 8.h),
             ElevatedButton(

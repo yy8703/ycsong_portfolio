@@ -7,6 +7,8 @@ import 'package:flutter_my_portfolio/ui/pages/clone/kurly_secondary_splash_page.
 import 'package:flutter_my_portfolio/ui/pages/clone/kurly_splash_page.dart';
 import 'package:flutter_my_portfolio/ui/pages/main/main_page.dart';
 import 'package:flutter_my_portfolio/ui/pages/rest_api/rest_api_main_page.dart';
+import 'package:flutter_my_portfolio/ui/pages/search_rest_api/image_view_page.dart';
+import 'package:flutter_my_portfolio/ui/pages/search_rest_api/search_rest_api_page.dart';
 
 class MainCubit extends Cubit<MainState> {
   MainCubit({
@@ -21,6 +23,10 @@ class MainCubit extends Cubit<MainState> {
 
   Future<void> moveToRestAPIPage() async {
     mainNavigatorKey.currentState!.pushNamed(RestApiMainPage.routePath);
+  }
+
+  Future<void> moveToSearchRestAPIPage() async {
+    mainNavigatorKey.currentState!.pushNamed(SearchRestApiPage.routePath);
   }
 
   ///스플래시 1
@@ -41,5 +47,10 @@ class MainCubit extends Cubit<MainState> {
   ///차트
   Future<void> movoToChartPage() async {
     mainNavigatorKey.currentState!.pushNamedAndRemoveUntil(ChartMainPage.routePath, (route) => false);
+  }
+
+  ///풀이미지
+  Future<void> fullImagePage() async {
+    mainNavigatorKey.currentState!.pushNamed(ImageViewPage.routePath);
   }
 }
