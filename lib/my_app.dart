@@ -7,6 +7,7 @@ import 'package:flutter_my_portfolio/repository/app_init_repository.dart';
 import 'package:flutter_my_portfolio/repository/auth_repository.dart';
 import 'package:flutter_my_portfolio/repository/clone_repository.dart';
 import 'package:flutter_my_portfolio/repository/rest_api_repository.dart';
+import 'package:flutter_my_portfolio/repository/search_repository.dart';
 import 'package:flutter_my_portfolio/ui/pages/init/splash_page.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -25,6 +26,7 @@ class _MyAppState extends State<MyApp> {
   late AuthRepository authRepository;
   late RestApiRepository restApiRepository;
   late CloneRepository cloneRepository;
+  late SearchRepository searchRepository;
 
   //cubit
   late AppRouteCubit appRouteCubit;
@@ -38,6 +40,7 @@ class _MyAppState extends State<MyApp> {
     authRepository = AuthRepository();
     restApiRepository = RestApiRepository();
     cloneRepository = CloneRepository();
+    searchRepository = SearchRepository();
   }
 
   @override
@@ -63,6 +66,7 @@ class _MyAppState extends State<MyApp> {
         RepositoryProvider<AuthRepository>.value(value: authRepository),
         RepositoryProvider<RestApiRepository>.value(value: restApiRepository),
         RepositoryProvider<CloneRepository>.value(value: cloneRepository),
+        RepositoryProvider<SearchRepository>.value(value: searchRepository),
       ],
       child: MultiBlocProvider(
         providers: [
